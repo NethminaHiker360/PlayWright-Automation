@@ -1,0 +1,37 @@
+import { test, expect } from '@playwright/test';
+
+test('test-timetracker @Sanity', async ({ page }) => {
+  await page.goto('https://woodsmiths2.nexwaveinternational.com/timetracker/login');
+  await page.getByRole('textbox', { name: 'Username' }).click();
+  await page.getByRole('textbox', { name: 'Password' }).click();
+  await page.getByRole('textbox', { name: 'Password' }).fill('https://woodsmiths2.nexwaveinternational.com/timetracker');
+  await page.getByRole('textbox', { name: 'Password' }).press('ControlOrMeta+a');
+  await page.getByRole('textbox', { name: 'Password' }).fill('https://woodsmiths2.nexwaveinternational.com/timetracker');
+  await page.getByRole('textbox', { name: 'Username' }).click();
+  await page.getByRole('textbox', { name: 'Username' }).fill('imesha@highflyerglobal.com');
+  await page.getByRole('textbox', { name: 'Password' }).click();
+  await page.getByRole('textbox', { name: 'Password' }).press('ControlOrMeta+a');
+  await page.getByRole('textbox', { name: 'Password' }).fill('Jd4Z3gyWDxiY');
+  await page.getByRole('button', { name: 'Sign In' }).click();
+  await page.getByRole('textbox', { name: 'Enter ID' }).fill('12');
+  await page.getByRole('button', { name: 'Clock In Record your arrival' }).click();
+  await page.getByRole('button', { name: 'Start Job Begin working on a' }).click();
+  await page.getByRole('button', { name: 'PreFinish SO Number: SO-0006 Job ID: PO-JOB00009 Item: Custom Benchtop Customer' }).click();
+  await page.getByRole('textbox', { name: 'Enter ID' }).fill('12');
+  await page.getByRole('button', { name: 'Start Job Begin working on a' }).click();
+  await page.getByRole('button', { name: 'Break Take a short break' }).click();
+  await page.getByRole('textbox', { name: 'Enter ID' }).fill('12');
+  await page.getByRole('button', { name: 'End Break Resume working on' }).click();
+  await page.getByRole('textbox', { name: 'Enter ID' }).fill('12');
+  await page.getByRole('button', { name: 'Start Job Begin working on a' }).click();
+  await page.getByRole('button', { name: 'Mark Complete', exact: true }).click();
+  await page.getByRole('button', { name: 'PreFinish SO Number: SO-0006 Job ID: PO-JOB00018 Item: Custom Benchtop Customer' }).click();
+  await page.getByRole('textbox', { name: 'Enter ID' }).fill('12');
+  await page.getByRole('button', { name: 'Lunch Take a lunch break' }).click();
+  await page.getByRole('textbox', { name: 'Enter ID' }).fill('12');
+  await page.getByRole('button', { name: 'End Lunch Resume working on' }).click();
+  await page.getByRole('textbox', { name: 'Enter ID' }).fill('12');
+  await page.getByRole('button', { name: 'Inwards/Outwards Record' }).click();
+  await page.getByRole('textbox', { name: 'Enter ID' }).fill('12');
+  await page.getByRole('button', { name: 'Clock Out Record your' }).click();
+});
