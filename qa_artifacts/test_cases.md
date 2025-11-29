@@ -1,0 +1,15 @@
+# Test Cases
+
+| Test ID | Title | Preconditions | Steps | Expected Result | Priority | Type | Status |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| TC-01 | User can log in with valid credentials | Valid user exists; login API reachable. | 1. Open /login. 2. Enter valid username/password. 3. Submit. | User is redirected to the dashboard home without errors. | High | Positive | Planned |
+| TC-02 | Invalid login is rejected | User is logged out. | 1. Open /login. 2. Enter wrong password. 3. Submit. | Login fails and an error message is shown without navigation to home. | High | Negative | Planned |
+| TC-03 | Unauthenticated user is redirected to login | No active session. | 1. Open /. 2. Observe behavior. | User is redirected to /login after session check fails. | High | Negative | Planned |
+| TC-04 | Employee number resolves to employee record | Employee list is available. | 1. Enter a known employee number. 2. Observe greeting and state. | Employee name is displayed and activity buttons are enabled when applicable. | High | Positive | Planned |
+| TC-05 | Clock in and clock out workflow | Employee identified; backend accepts time logs. | 1. Enter employee number. 2. Tap Clock In. 3. Start a job. 4. Clock Out. | Success toasts appear for each action and state resets per design. | Critical | Positive | Planned |
+| TC-06 | Break and lunch handling | Employee clocked in. | 1. Start Break. 2. Verify activity buttons disable. 3. End Break to resume last activity. | Break status displays, actions are blocked appropriately, and resuming clears break state. | High | Positive | Planned |
+| TC-07 | Select job or task and record productive/downtime activity | Employee clocked in with available jobs/tasks and activity types. | 1. Choose Start Job and select a job/task. 2. Choose a productive activity. 3. Choose a downtime activity. | Selections succeed with confirmations; downtime buttons are disabled when on break or before clock-in. | High | Positive/Negative | Planned |
+| TC-08 | Self-service modals for My Hours and My Smoko Times | Employee identified with historical data. | 1. Enter employee number. 2. Open My Hours. 3. Open My Smoko Times. | Modals load without errors and display the employee-specific report data. | Medium | Positive | Planned |
+| TC-09 | Work Tracker refresh and data sections | Active sessions, downtime, productive activities, and tasks exist. | 1. Navigate to Work Tracker. 2. Observe active sessions and downtime lists. 3. Wait for auto-refresh or trigger manual refresh (if available). | Data loads across all sections and refresh intervals update the last refreshed timestamp. | Medium | Positive | Planned |
+| TC-10 | Reports dropdown navigates to Frappe reports | Authenticated user on dashboard. | 1. Open Reports dropdown. 2. Select each report link. | Browser navigates to the corresponding report URLs without blocking UI. | Low | Positive | Planned |
+| TC-11 | Logout ends session | User logged in. | 1. Click Logout. 2. Attempt to access home again. | User is redirected to login and session endpoints clear credentials. | High | Positive | Planned |
