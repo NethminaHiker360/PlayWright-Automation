@@ -1,12 +1,12 @@
 import { test, expect } from '@playwright/test';
+import { testURL } from '../common.js';
 
-test('test', async ({ page }) => {
-  await page.goto('https://www.saucedemo.com/');
-  await page.locator('[data-test="username"]').click();
-  await page.locator('[data-test="username"]').fill('standard_user');
-  await page.locator('[data-test="password"]').click();
-  await page.locator('[data-test="password"]').fill('secret_sauce');
-  await page.locator('[data-test="login-button12"]').click();
-  await page.getByRole('button', { name: 'Open Menu' }).click();
-  await page.locator('[data-test="logout-sidebar-link"]').click();
+test('login test', async ({ page }) => {
+  await page.goto(testURL());
+  await page.getByRole('textbox', { name: 'Username' }).click();
+  await page.getByRole('textbox', { name: 'Username' }).fill('Administrator');
+  await page.getByRole('textbox', { name: 'Password' }).click();
+  await page.getByRole('textbox', { name: 'Password' }).fill('123');
+  await page.getByRole('button', { name: 'Sign In' }).click();
+  await page.getByRole('button', { name: 'Logout' }).click();
 });
