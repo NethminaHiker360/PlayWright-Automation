@@ -1,9 +1,9 @@
 import { test, expect } from '@playwright/test';
-import { testURL } from '../common.js';
+import { timeTrackerURL } from '../common.js';
 
 test('login test', async ({ page }) => {
   // Go to website
-  await page.goto(testURL());
+  await page.goto(timeTrackerURL());
 
   // Verify Sign In page is displayed
   await expect(page.getByRole('heading', { name: 'Sign In' })).toBeVisible();
