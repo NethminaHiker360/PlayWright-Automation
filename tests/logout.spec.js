@@ -19,13 +19,10 @@ test("Todo Test", async () => {
   // Open a new tab in the same context --> same session new tab
   const newPage01 = await context.newPage();
   await newPage01.goto(timeTrackerURL());
-  await newPage01.pause();
-
 
   // Open a new window with a new context --> incognito window
   const newContext = await browser.newContext();
-  const newPage = await newContext.newPage();
-  await newPage.goto(timeTrackerURL());
-  await newPage.pause();
-
+  const newPage02 = await newContext.newPage();
+  await newPage02.goto(timeTrackerURL());
+  await newPage02.pause();
 });
