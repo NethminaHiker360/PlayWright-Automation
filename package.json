@@ -17,6 +17,7 @@
   },
   "homepage": "https://github.com/NethminaHiker360/PlayWright-Automation#readme",
   "devDependencies": {
+    "@playwright/mcp": "^0.0.53",
     "@playwright/test": "^1.57.0",
     "@types/node": "^24.10.1"
   }
